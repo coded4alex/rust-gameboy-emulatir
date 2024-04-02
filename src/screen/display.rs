@@ -10,7 +10,7 @@ use super::renderer;
 
 pub struct Display {
     handle: Option<JoinHandle<()>>,
-    sender: Sender<DisplayInfo>,
+    _sender: Sender<DisplayInfo>,
 }
 
 pub fn create_display(window_name: &str) -> Display {
@@ -22,7 +22,7 @@ pub fn create_display(window_name: &str) -> Display {
     });
     Display {
         handle: Some(handle),
-        sender: sender,
+        _sender: sender,
     }
 }
 
